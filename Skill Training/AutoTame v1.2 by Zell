@@ -3,25 +3,25 @@
 // Written by: Zell
 //
 // IMPORTANT
-// This requires you to have a dagger in your backpack
+// This requires you to have a dagger in your backpack.
 //
-// You require a tank for this
-// Create a script variable called tank
-// Make sure that tank is on follow, not guard
+// You require a tank for this.
+// Create a script variable called "tank".
+// Make sure that your tank is on follow, not guard.
 //
-// 50-72.5 use rock guar as tank
-// 75-102.5 use scarab as tank
-// 105-120 use sand roach as tank
+// 50-72.5 use "rock guar" as tank.
+// 75-102.5 use "scarab" as tank.
+// 105-120 use "sand roach" as tank.
 //
 // The important thing here is to not use
-// a scarab as a tank when taming scarabs
+// a scarab as a tank when taming scarabs.
 //
 ///////////////////////////////////////////////////////
 //
 // This is enforces selection of tank on client launch
 if not listexists 'tankcount'
   createlist 'tankcount'
-  overhead 'Please select your tanking pet'
+  overhead 'Please select your tanking pet.'
   setvar 'tank'
 endif
 // Bandage timer creation
@@ -29,7 +29,7 @@ if not timerexists 'bandageTimer'
   createtimer 'bandageTimer'
   settimer 'bandageTimer' 0
 endif
-// Bandage my tank every 10 seconds, change as required
+// Bandage my tank every 10 seconds, change as required.
 if timer 'bandageTimer' > 10000
   @dclicktype 3617 backpack
   pause 500
@@ -41,11 +41,11 @@ if timer 'bandageTimer' > 10000
     settimer 'bandageTimer' 0
   endif
 endif
-// In case for some reason bandage doesnt get used on tank
-// cancels target so bandage doesnt target grey untamed
+// In case the bandages does not get used on the tank:
+// Cancel target so bandage does not target untamed gray.
 hotkey 'Cancel current target'
 // Apply pets to tame at specific levels, feel free to add
-// them, see user doc for how
+// them, see user doc for how-to.
 if skill 'Taming' < 60
   removelist 'pets'
   createlist 'pets'
